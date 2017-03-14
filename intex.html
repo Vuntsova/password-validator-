@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Validator</title>
+</head>
+<body>
+<h1>Open the console to see the magic</h1>
+<script type="text/javascript">
+	//=======Is Password Valid?======
+function isPasswordValid(input){
+	
+  if(!hasUppercase(input)){
+    return "Password needs a capital letter!";
+  }
+  
+  else if(!hasLowercase(input)){
+    return "Password needs a lower case letter!";
+  }
+  
+  else if(!isLongEnough(input)){
+    return "Password needs to be at least 8 letters!";
+  }
+  
+  else if(!hasSpecialCharacter(input)){
+    return "Password needs a special character - ! or @ or #";
+  }else{
+    return "Password Valid!";
+  }
+  
+}//========end validator========
+
+//=======Condition UpperCase=====
+function hasUppercase(input){
+	for(var i=0; i<input.length; i++){
+    if(input[i] === input[i].toUpperCase()){
+      return true;
+    }
+  }
+}//=======End Uppercase===========
+
+//=======Condition LowerCase=====
+function hasLowercase(input){
+	for(var i=0; i<input.length; i++){
+    if(input[i] === input[i].toLowerCase()){
+      return true;
+    }
+  }
+}//=======End Lowercase===========
+
+//=======Condition 8 letters=====
+function isLongEnough(input){
+	for(var i=0; i<input.length; i++){
+    if(input[i] === input[7]){
+      return true;
+    }
+  }
+}//=======End 8 Letters===========
+
+//=======Condition hasSpecialCharacter=====
+function hasSpecialCharacter(input){
+	for(var i=0; i<input.length; i++){
+    if(input[i] === "!" || input[i] === "!" || input[i] === "!" || input[i] === "@" || input[i] === "#"){
+      return true;
+    }
+  }
+}//=======End hasSpecialCharacter===========
+
+
+
+
+console.log(isPasswordValid('Emiliya87!'));
+
+</script>
+</body>
+</html>
